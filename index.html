@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="nb">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#11133d">
+  <meta name="description" content="Månen 2026 – en uoffisiell guide til Månefestivalen i Gamlebyen, Fredrikstad, 23.–25. juli 2026.">
+  <title>Månen 2026 – uoffisiell guide til Månefestivalen</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#program">Hopp til programmet</a>
+
+  <header class="hero">
+    <div class="hero__glow" aria-hidden="true"></div>
+    <div class="shell hero__content">
+      <p class="eyebrow">Uoffisiell guide til Månefestivalen</p>
+      <h1>Månen <span>2026</span></h1>
+      <p class="hero__place">Gamlebyen, Fredrikstad</p>
+      <p class="hero__date">
+        <time datetime="2026-07-23">23.</time>–<time datetime="2026-07-25">25. juli 2026</time>
+      </p>
+      <a class="hero__link" href="#program">Se programmet <span aria-hidden="true">↓</span></a>
+    </div>
+  </header>
+
+  <main id="program" class="shell program">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">Tre dager i Gamlebyen</p>
+        <h2>Program</h2>
+      </div>
+      <p id="event-count" class="event-count" aria-live="polite"></p>
+    </div>
+
+    <div class="controls" aria-label="Filtrer festivalprogrammet">
+      <div class="day-tabs" role="tablist" aria-label="Velg festivaldag">
+        <button id="tab-thursday" class="day-tab is-active" type="button" role="tab" aria-selected="true" aria-controls="event-list" data-day="Thursday" disabled>
+          <span>Torsdag</span><small>23. juli</small>
+        </button>
+        <button id="tab-friday" class="day-tab" type="button" role="tab" aria-selected="false" aria-controls="event-list" data-day="Friday" tabindex="-1" disabled>
+          <span>Fredag</span><small>24. juli</small>
+        </button>
+        <button id="tab-saturday" class="day-tab" type="button" role="tab" aria-selected="false" aria-controls="event-list" data-day="Saturday" tabindex="-1" disabled>
+          <span>Lørdag</span><small>25. juli</small>
+        </button>
+      </div>
+
+      <div class="stage-filter">
+        <label for="stage-select">Filtrer på scene</label>
+        <select id="stage-select" disabled>
+          <option value="all">Alle scener</option>
+          <option value="Månehagen">Månehagen</option>
+          <option value="Tøihusplassen">Tøihusplassen</option>
+          <option value="Vollen Stage">Vollen Stage</option>
+        </select>
+      </div>
+    </div>
+
+    <section aria-labelledby="selected-day-title">
+      <h3 id="selected-day-title" class="selected-day-title"></h3>
+      <div id="event-list" class="event-list" role="tabpanel" aria-labelledby="tab-thursday" tabindex="0">
+        <p class="loading">Laster programmet …</p>
+      </div>
+    </section>
+
+    <aside class="playlist-card" aria-labelledby="playlist-title">
+      <div class="playlist-card__icon" aria-hidden="true">▶</div>
+      <div class="playlist-card__content">
+        <p class="eyebrow">Uoffisiell spilleliste</p>
+        <h3 id="playlist-title">Festivalstemning</h3>
+        <p>Hør et utvalg låter fra artistene som spiller på Månefestivalen 2026.</p>
+      </div>
+      <a class="playlist-card__link" href="https://open.spotify.com/playlist/01RR9T6qkxRmA3sDwJSnTd" target="_blank" rel="noopener noreferrer">
+        Åpne spillelisten på Spotify <span aria-hidden="true">↗</span>
+      </a>
+    </aside>
+  </main>
+
+  <footer>
+    <div class="shell footer__inner">
+      <p class="footer__title">Månen 2026</p>
+      <p>Uoffisiell festivalguide. Ikke tilknyttet eller godkjent av Månefestivalen.</p>
+      <a class="footer__official-link" href="https://www.maanefestivalen.no/" target="_blank" rel="noopener noreferrer">
+        Besøk Månefestivalens offisielle nettside <span aria-hidden="true">↗</span>
+      </a>
+      <p class="footer__credit">Utviklet av <span>Ole Henrik Leister</span>.</p>
+    </div>
+  </footer>
+</body>
+</html>
