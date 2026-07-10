@@ -2,6 +2,7 @@ const eventList = document.querySelector("#event-list");
 const dayTitle = document.querySelector("#selected-day-title");
 const eventCount = document.querySelector("#event-count");
 const stageSelect = document.querySelector("#stage-select");
+const stageFilter = document.querySelector(".stage-filter");
 const dayTabs = [...document.querySelectorAll(".day-tab")];
 
 let program = [];
@@ -256,14 +257,24 @@ function syncStageFilterWithDay() {
 
   stageSelect.disabled = isThursday || programState !== "ready";
   if (isThursday) {
-    stageSelect.setAttribute("aria-description", "Alle programpunkter torsdag er i Månehagen.");
+    const thursdayStageMessage = "Torsdag har kun artister i Månehagen.";
+    stageSelect.setAttribute("aria-description", thursdayStageMessage);
+    stageFilter.title = thursdayStageMessage;
   } else {
     stageSelect.removeAttribute("aria-description");
+    stageFilter.removeAttribute("title");
   }
 }
 
 function selectDay(tab) {
-  selectedDay = tab.dataset.day;
+  const nextDay = tab.dataset.day;
+  const isDayChange = nextDay !== selectedDay;
+  selectedDay = nextDay;
+
+  if (isDayChange && selectedDay !== "Thursday") {
+    stageSelect.value = "all";
+  }
+
   dayTabs.forEach((candidate) => {
     const isSelected = candidate === tab;
     candidate.classList.toggle("is-active", isSelected);
